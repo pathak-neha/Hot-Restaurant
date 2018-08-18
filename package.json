@@ -1,0 +1,23 @@
+{
+  "name": "hot-restaurant",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pathak-neha/Hot-Restaurant.git"
+  },
+  "author": "Neha Pathak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pathak-neha/Hot-Restaurant/issues"
+  },
+  "homepage": "https://github.com/pathak-neha/Hot-Restaurant#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}

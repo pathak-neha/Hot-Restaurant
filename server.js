@@ -9,29 +9,39 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 var reservations = [];
+var waitList = [];
 
-app.get("/", function (req, res) {
+app.get("/api/tables", function (req, res) {
+    return res.json(reservations)
+});
+
+app.get("/api/reservations", function (req, res) {
     return res.json(reservations)
 });
 
 
-app.get("/api/tables", function (req, res) {
-    res.sendFile(path.join(__dirname, "#"));
+app.get("/api/waitlist", function (req, res) {
+    return res.json(waitList)
 });
 
-// app.get("/api/characters/:character", function (req, res) {
-//     var chosen = req.params.character;
+app.get("/reserve", function(req, res) {
+    res.sendFile(path.join(__dirname, "reservation.html"));
+  });
 
-//     console.log(chosen);
+  app.get("/tables", function(req, res) {
+    res.sendFile(path.join(__dirname, "resevation.html"));
+  });
 
-//     for (var i = 0; i < characters.length; i++) {
-//         if (chosen === characters[i].routeName) {
-//             return res.json(characters[i]);
-//         }
-//     }
 
-//     return res.json(false);
-// });
+app.post("/reserve", function(req, res) {
+    var newReservation = req.body;
+  
+    console.log(newReservation);
+  
+    characters.push(newReservation);
+  });
+  
+  
 
 app.listen(PORT, function () {
     console.log("App listening on PORT " + PORT);
